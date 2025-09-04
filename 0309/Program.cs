@@ -4,26 +4,43 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _0309
+namespace ConsoleApp1
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            início:
+        inicio:
             try
             {
-                Funcionario marcos = new Funcionario();
-                Funcionario maria = new Funcionario(11111111111);
+                Funcionario marcos = new Funcionario(
+                    11111111111,
+                    "Marcos",
+                    48
+                );
+
+                Funcionario maria = new Funcionario(
+                    11111111111,
+                    "Maria",
+                    80
+                );
+
+                maria.setNome("Maria", "Silva");
+
+                maria.setSalario(44444);
+
+                Console.WriteLine($"Salario: {maria.getSalario()}");
+                Console.ReadLine();
+
             }
-            catch ( Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
                 Console.ReadLine();
-                goto início;
+                goto inicio;
             }
-            
-           
+
+
 
         }
     }
